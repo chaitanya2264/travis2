@@ -1,0 +1,19 @@
+language: python
+python:
+  - "3.8"  # Specify the Python version(s) to test on
+
+# Step 1: Install dependencies
+install:
+  - pip install -r requirements.txt
+
+# Step 2: Run the build process (tests in this case)
+script:
+  - python -m unittest discover -s . -p "test_*.py"  # Runs all unit tests
+
+# Optional: Notify build status
+notifications:
+  email:
+    recipients:
+      - anguri.microsoft@gmail.com
+    on_success: always  # Notify when build succeeds
+    on_failure: always  # Notify when build fails
